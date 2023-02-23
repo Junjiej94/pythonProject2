@@ -1,0 +1,22 @@
+import pandas as pd
+
+def getExpID(targetCSV, site):
+    date = ''
+    check = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-']
+    for i in targetCSV:
+        if i in check:
+            date += i
+
+    date = targetCSV.replace('expDescr_','')
+    datef = date.replace('.csv','')
+    print(datef)
+    pew = datef + '_' + '{:02d}'.format(site)
+    pass
+    return pew
+
+
+if __name__ == '__main__':
+    targetCSV = 'expDescr_2022-03-11.csv'
+    site = 1
+    pdFrame = pd.read_csv(targetCSV)
+
